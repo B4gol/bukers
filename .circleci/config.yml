@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  b4golv:
+  :
 
     docker:
       - image: cimg/base:stable
@@ -60,6 +60,6 @@ jobs:
 
 workflows:
   version: 2.1
-  build-essential:
+  checkout:
     jobs:
       - docker
