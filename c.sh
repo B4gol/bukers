@@ -1,14 +1,14 @@
-#$HOME/build_kernel/telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
-#Download : ["$zip_name".zip](https://github.com/wulan17/kernel_script2/releases/download/"$TRAVIS_TAG"/"$zip_name".zip)"
+#$HOME/buildkernel/telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
+#Download : ["$zip_name".zip](https://github.com/B4gol/kernelscript/releases/download/"$CIRCLECI_TAG"/"$zip_name".zip)"
 
-curl -v -F "chat_id=$TELEGRAM_CHAT" -F document=@$HOME/build_kernel/AnyKernel/$zip_name.zip -F "parse_mode=html" -F caption="Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
-Dev : wulan17
+curl -v -F "chat_id=$TELEGRAM_CHAT" -F document=@$HOME/buildkernel/AnyKernel/$zip_name.zip -F "parse_mode=html" -F caption="Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
+Dev : B4gol
 
 Product : Kernel
 
-Device : #cereus
+Device : #riva
 
-Branch : Pie
+Branch : Rel
 
 Compiler : ""$(gcc --version)""
 
