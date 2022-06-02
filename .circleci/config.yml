@@ -42,4 +42,4 @@ jobs:
 workflows:
   buildkernel_workflow:
     jobs:
-      - buildkernel
+      - docker
