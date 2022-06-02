@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - checkout
-        env:
+        environment:
             TELEGRAM_TOKEN="$TELE_TOKEN"
             TELEGRAM_CHAT="$TELE_CHAT"
             GITHUB_TOKEN="$OTH_TOKEN"
