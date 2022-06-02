@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  buildkernel:
+  decent:
 
     docker:
       - image: cimg/base:stable
@@ -40,7 +40,7 @@ jobs:
       - run: cd $HOME/kernel && chmod +x c.sh && source c.sh
             # Set up git user name and tag this commit
 workflows:
-  decent-workflow:
+  decent-and-test:
     jobs:
     cooking:
       - buildkernel
