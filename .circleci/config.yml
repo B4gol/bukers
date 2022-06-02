@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  docker:
+  buildkernel:
 
     docker:
       - image: cimg/base:stable
@@ -40,6 +40,6 @@ jobs:
       - run: cd $HOME/kernel && chmod +x c.sh && source c.sh
             # Set up git user name and tag this commit
 workflows:
-  buildkernel:
+  buildkernel_workflow:
     jobs:
       - buildkernel
