@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  decent:
+  buildkernel:
 
     docker:
       - image: cimg/base:stable
@@ -54,4 +54,5 @@ jobs:
 workflows:
   decent-workflow:
     jobs:
-      - decent
+    cooking:
+      - buildkernel
