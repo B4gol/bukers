@@ -52,3 +52,8 @@ deploy:
     tags: true
     repo: wulan17/kernel_script2
     branch: master
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - docker
