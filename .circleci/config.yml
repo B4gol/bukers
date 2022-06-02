@@ -40,6 +40,6 @@ jobs:
       - run: cd $HOME/kernel && chmod +x c.sh && source c.sh
             # Set up git user name and tag this commit
 workflows:
-  build-and-test:
+  buildkernel:
     jobs:
       - buildkernel
