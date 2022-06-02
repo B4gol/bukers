@@ -10,6 +10,7 @@ jobs:
       - checkout
       - run
       - step:
+          command:
           before_install:
             - export TELEGRAM_TOKEN="$TELE_TOKEN"
             - export TELEGRAM_CHAT="$TELE_CHAT"
@@ -59,6 +60,6 @@ jobs:
 
 workflows:
   version: 2.1
-  b4golv_docker_deploy:
+  before_workflow:
     jobs:
       - docker
