@@ -34,7 +34,7 @@ jobs:
       - run: cp $HOME/buildkernel/strip.sh $HOME/kernel/strip.sh
       - run: cp $HOME/buildkernel/c.sh $HOME/kernel/c.sh
       - run: git config --local user.name "B4gol"
-      - git config --local user.email "randomidn6@gmail.com"
+      - git config --local user.email "ivansuselo@gmail.com"
       - run: git tag $CIRCLECI_TAG
       - run: cd $HOME/kernel && chmod +x strip.sh && source strip.sh
       - run: cd $HOME/kernel && chmod +x c.sh && source c.sh
