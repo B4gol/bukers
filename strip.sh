@@ -1,13 +1,13 @@
 # Main Environment
 KERNEL_DIR=$PWD
-KERN_IMG=$KERNEL_DIR/out/arch/arm/boot/zImage-dtb
-ZIP_DIR=$HOME/build_kernel/AnyKernel
-CONFIG_DIR=$KERNEL_DIR/arch/arm/configs
-CONFIG=cereus_defconfig
+KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/zImage-dtb
+ZIP_DIR=$HOME/buildkernel/AnyKernel
+CONFIG_DIR=$KERNEL_DIR/arch/arm64/configs
+CONFIG=riva_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$PWD/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="$PWD/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
 mv zImage-dtb zImage
