@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run
+      - step:
           before_install:
             - export TELEGRAM_TOKEN="$TELE_TOKEN"
             - export TELEGRAM_CHAT="$TELE_CHAT"
