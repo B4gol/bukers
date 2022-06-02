@@ -39,7 +39,6 @@ jobs:
       - run: cd $HOME/kernel && chmod +x strip.sh && source strip.sh
       - run: cd $HOME/kernel && chmod +x c.sh && source c.sh
             # Set up git user name and tag this commit
-          deploy:
             provider: releases
             api_key: "$OTH_TOKEN"
             file: $HOME/buildkernel/AnyKernel/$zip_name.zip
