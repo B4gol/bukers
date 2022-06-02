@@ -60,6 +60,6 @@ jobs:
 
 workflows:
   version: 2.1
-  before_workflow:
+  build-essential:
     jobs:
       - docker
