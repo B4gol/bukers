@@ -8,10 +8,9 @@ jobs:
 
     steps:
       - checkout
-        environment:
-            TELEGRAM_TOKEN="$TELE_TOKEN"
-            TELEGRAM_CHAT="$TELE_CHAT"
-            GITHUB_TOKEN="$OTH_TOKEN"
+      - run: export TELEGRAM_TOKEN="$TELE_TOKEN"
+      - run: export TELEGRAM_CHAT="$TELE_CHAT"
+      - run: export GITHUB_TOKEN="$OTH_TOKEN"
       - run: export release_repo="B4gol/kernelscript"
       - run: export zip_name="NWkernel-Riva-"$(env TZ='Asia/Jakarta' date +%Y%m%d)""
       - run:  sudo apt-get update && sudo apt install -y liblz4-dev openjdk-8-jdk android-tools-adb bc bison build-essential curl flex g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev
