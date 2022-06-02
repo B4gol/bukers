@@ -7,8 +7,7 @@ jobs:
       - image: cimg/base:stable
 
     steps:
-      - checkout
-      - run
+      - run:
           # before_install:
             - export TELEGRAM_TOKEN="$TELE_TOKEN"
             - export TELEGRAM_CHAT="$TELE_CHAT"
