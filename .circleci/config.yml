@@ -1,5 +1,11 @@
 language: C
 sudo: required
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
+jobs:
+  build:
+    docker:
+      - image: cimg/node:17.0-browsers
 
 before_install:
   - export TELEGRAM_TOKEN="$TELEGRAM_TOKEN"
