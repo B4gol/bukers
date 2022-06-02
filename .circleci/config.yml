@@ -9,9 +9,7 @@ jobs:
     steps:
       - checkout
       - run
-          name:
-            before_install:
-          command:
+          before_install:
             - export TELEGRAM_TOKEN="$TELE_TOKEN"
             - export TELEGRAM_CHAT="$TELE_CHAT"
             - export GITHUB_TOKEN="$OTH_TOKEN"
@@ -19,15 +17,11 @@ jobs:
             - export zip_name="NWkernel-Riva-"$(env TZ='Asia/Jakarta' date +%Y%m%d)""
             - sudo apt-get update
             - sudo apt install -y liblz4-dev openjdk-8-jdk android-tools-adb bc bison build-essential curl flex g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev
-          name:
-            before_script:
-          command:
+          before_script:
             - cd $HOME && PATH=~/bin:$PATH
             - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
             - chmod a+x ~/bin/repo
-        name:
           script:
-        command:
             - cd $HOME && git clone https://github.com/B4gol/kernelscript.git buildkernel
             - chmod a+x $HOME/buildkernel/telegram
             - SYNC_START=$(date +"%s")
@@ -49,25 +43,22 @@ jobs:
             - git tag $CIRCLECI_TAG
             - cd $HOME/kernel && chmod +x strip.sh && source strip.sh
             - cd $HOME/kernel && chmod +x c.sh && source c.sh
-        name:
           before_deploy:
-        command:
             # Set up git user name and tag this commit
-        name:
           deploy:
-        command:
             provider: releases
             api_key: "$OTH_TOKEN"
             file: $HOME/buildkernel/AnyKernel/$zip_name.zip
             skip_cleanup: true
-            on:
-              tags: true
-              repo: B4gol/kernelscript
-              branch: newline
+            
+          on:
+            tags: true
+            repo: B4gol/kernelscript
+            branch: newline
 
 
 workflows:
   version: 2.1
-    checkout:
+    decent_build:
       jobs
         - docker
