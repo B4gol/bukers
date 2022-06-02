@@ -1,4 +1,4 @@
-#kernel_travis
+#Circleci_Status
 
-[![Build Status](https://travis-ci.org/wulan17/kernel_script2.svg?branch=master)](https://travis-ci.org/wulan17/kernel_script2)
+[![CircleCI](https://circleci.com/gh/B4gol/circleci.svg?style=shield&circle-token=b7f096ed35d60d90f0c6723201538ef3a1619c67)](https://circleci.com/gh/B4gol/circleci)
 
