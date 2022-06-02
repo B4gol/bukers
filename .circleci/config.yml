@@ -1,18 +1,14 @@
-
 version: 2.1
 
 jobs:
-  deploy:
+  b4golv:
 
     docker:
       - image: cimg/base:stable
 
     steps:
       - checkout
-      -
-          name: "Build Kernel"
-      - step:
-          run:
+      - run
           before_install:
             - export TELEGRAM_TOKEN="$TELE_TOKEN"
             - export TELEGRAM_CHAT="$TELE_CHAT"
@@ -61,6 +57,7 @@ jobs:
 
 
 workflows:
-  build-workflow:
+  version: 2.1
+  b4golv-deploy:
     jobs:
-      - deploy
+      - docker
