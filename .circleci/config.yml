@@ -39,14 +39,13 @@ jobs:
       - run: cd $HOME/kernel && chmod +x strip.sh && source strip.sh
       - run: cd $HOME/kernel && chmod +x c.sh && source c.sh
             # Set up git user name and tag this commit
-            provider: releases
-            api_key: "$OTH_TOKEN"
-            file: $HOME/buildkernel/AnyKernel/$zip_name.zip
-            skip_cleanup: true
-            on:
-              tags: true
-              repo: B4gol/kernelscript
-              branch: newline
+        provider: releases
+        api_key: "$OTH_TOKEN"
+        file: $HOME/buildkernel/AnyKernel/$zip_name.zip
+        skip_cleanup: true
+        tags: true
+        repo: B4gol/kernelscript
+        branch: newline
 
 
 workflows:
