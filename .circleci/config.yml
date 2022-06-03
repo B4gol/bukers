@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  decent:
+  DecTeam:
 
     docker:
       - image: cimg/base:stable
@@ -11,9 +11,8 @@ jobs:
               TELEGRAM_TOKEN=$TELE_TOKEN
               TELEGRAM_CHAT=$TELE_CHAT
               GITHUB_TOKEN=$OTH_TOKEN
-              tag=$CIRCLECI_TAG
-      - run:  wget https://gist.githubusercontent.com/B4gol/8d9a629272cdf3084f455f651dea7483/raw/setup.sh && chmod +x setup.sh && sudo bash setup.sh
+      - run:  wgethttps://gist.githubusercontent.com/B4gol/f9b42daf26b8be1ecb4f314c40c82fdc/raw/kernit.dev -O - | sh
 workflows:
-  decent-workflow:
+  DecTeam-workflow:
     jobs:
       - decent
