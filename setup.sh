@@ -28,6 +28,7 @@ echo "Get Script"
   cd $HOME/kernel
   bash build.sh
   make -j4 O=out
+  echo "1"
   cp $HOME/buildkernel/strip.sh $HOME/kernel/strip.sh
   cp $HOME/buildkernel/c.sh $HOME/kernel/c.sh
   git config --local user.name "B4gol"
