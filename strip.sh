@@ -7,7 +7,7 @@ CONFIG=riva_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$PWD/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
+CROSS_COMPILE+="$PWD/gcc/bin/aarch64-elf-gcc-"
 LD="ld"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
