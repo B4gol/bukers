@@ -21,7 +21,7 @@ chmod a+x /home/travis/kernel/aarch64-linux-android-4.9/libexec/gcc/aarch64-linu
 
 $HOME/buildkernel/telegram -M "Build Start
 By      : B4gol
-Product : Redmi 5a
+Product : Rova
 Device  : #riva
 Branch  : R11
 Compiler: ""$(${CROSS_COMPILE}gcc --version | head -n 1)""
