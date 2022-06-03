@@ -6,12 +6,12 @@ CONFIG_DIR=$KERNEL_DIR/arch/arm64/configs
 CONFIG=final_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
-CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="~/gcc/bin/aarch64-elf-"
-CROSS_COMPILE_ARM32+="~/gcc/bin/arm-eabi-"
-LD+="~/gcc64/bin/aarch64-elf-ld.lld"
-export CROSSC="~/gcc64/bin/aarch64-elf-"
-export CROSSC32="~/gcc32/bin/arm-eabi-"
+CROSS_COMPILE+="ccache"
+CROSS_COMPILE+="$HOME/gcc64/bin/aarch64-elf-"
+CROSS_COMPILE_ARM32+="$HOME/gcc32/bin/arm-eabi-"
+LD+="$HOME/gcc64/bin/aarch64-elf-ld.lld"
+export CROSSC="$HOME/gcc64/bin/aarch64-elf-"
+export CROSSC32="$HOME/gcc32/bin/arm-eabi-"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
 mv Image.gz-dtb Image.gz-dtb
