@@ -1,5 +1,4 @@
 # Main Environment
-cd $HOME/kernel
 KERNEL_DIR=$PWD
 KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
 ZIP_DIR=$KERNEL_DIR/AnyKernel
