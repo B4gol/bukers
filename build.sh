@@ -7,15 +7,17 @@ CONFIG=final_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$PWD/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
+CROSS_COMPILE+="$PWD/gcc/bin/aarch64-elf-gcc-"
 LD="ld.lld"
 
 echo -e "\n(i) Cloning toolcahins if folder not exist..."
-git clone https://github.com/wulan17/prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git aarch64-linux-android-4.9
+git clone https://github.com/mvaisakh/gcc-arm64.git gcc --depth=1
+#git clone https://github.com/mvaisakh/gcc-arm.git gcc32 --depth=1
+#git clone https://github.com/wulan17/prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git aarch64-linux-android-4.9
 #git clone https://github.com/wulan17/prebuilts_gcc_linux-x86_arm-linux-androideabi-4.9.git arm-linux-androideabi-4.9
-chmod a+x /home/travis/kernel/aarch64-linux-android-4.9/bin/*
-chmod a+x /home/travis/kernel/aarch64-linux-android-4.9/libexec/gcc/aarch64-linux-android/4.9.x/*
-chmod a+x /home/travis/kernel/aarch64-linux-android-4.9/libexec/gcc/aarch64-linux-android/4.9.x/plugin/*
+chmod a+x /home/circleci/kernel/gcc/bin/*
+chmod a+x /home/circleci/kernel/gcc/libexec/gcc/aarch64-elf-gcc/*
+chmod a+x /home/circleci/kernel/gcc/libexec/gcc/aarch64-elf-gcc/plugin/*
 
 #cd $HOME/kernel && wget https://github.com/wulan17/android_kernel_xiaomi_cactus/commit/63623ef9ea9260810d10c2422d4548470a29f304.patch
 #cd $HOME/kernel && git am < 63623ef9ea9260810d10c2422d4548470a29f304.patch
