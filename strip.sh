@@ -10,7 +10,7 @@ CROSS_COMPILE+="ccache "
 CROSS_COMPILE+="$PWD/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
-mv Image-dtb Image.gz-dtb
+mv Image.gz-dtb Image.gz-dtb
 BUILD_END=$(date +"%s")
 BUILD_DIFF=$((BUILD_END - BUILD_START))
 zip -r $zip_name.zip ./*
