@@ -8,10 +8,11 @@ jobs:
     steps:
       - checkout
       - run:  echo "Environment Setup"
-              export TELEGRAM_TOKEN=$TELE_TOKEN
-              export TELEGRAM_CHAT=$TELE_CHAT
-              export GITHUB_TOKEN=$OTH_TOKEN
-              sudo bash setup.sh
+              TELEGRAM_TOKEN=$TELE_TOKEN
+              TELEGRAM_CHAT=$TELE_CHAT
+              GITHUB_TOKEN=$OTH_TOKEN
+              tag=$CIRCLECI_TAG
+      - run:  sudo bash setup.sh
 workflows:
   decent-workflow:
     jobs:
