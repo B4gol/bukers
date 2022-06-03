@@ -8,7 +8,7 @@ CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
 CROSS_COMPILE+="$PWD/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
-LD+=$PWD/aarch64-linux-android-4.9/aarch64-linux-android-ld.lld
+LD+="$CROSS_COMPILE-ld"
 
 echo -e "\n(i) Cloning toolcahins if folder not exist..."
 git clone https://github.com/wulan17/prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git aarch64-linux-android-4.9
@@ -26,7 +26,7 @@ Product : Rova Kernel
 Device  : #riva
 Branch  : R11
 Compiler: ""$(gcc --version | head -n 1)""
-Jalur   : ""$(${LD} --version | head -n 1)""
+Jalur   : ""$($LD --version | head -n 1)""
 Date    : ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
