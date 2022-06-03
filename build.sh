@@ -28,12 +28,12 @@ export CROSSC+="$HOME/gcc64/bin/aarch64-elf-"
 export CROSSC32+="$HOME/gcc32/bin/arm-eabi-"
 
 $HOME/buildkernel/telegram -M "Build Start
-By      : B4gol
-Product : Rova Kernel
-Device  : #riva
-Branch  : R11
+By: B4gol
+Product: Rova Kernel
+Device: #riva
+Branch: R11
 Compiler: ""$(gcc --version | head -n 1)""
-Date    : ""$(env TZ=Asia/Jakarta date)"""
+Tanggal: ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
 export ARCH=arm64
