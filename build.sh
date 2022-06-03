@@ -8,6 +8,7 @@ CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
 CROSS_COMPILE+="$PWD/aarch64-linux-android-4.9/bin/aarch64-linux-android-"
+LD+=$PWD/aarch64-linux-android-4.9/aarch64-linux-android-ld.lld
 
 echo -e "\n(i) Cloning toolcahins if folder not exist..."
 git clone https://github.com/wulan17/prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git aarch64-linux-android-4.9
@@ -21,16 +22,17 @@ chmod a+x /home/travis/kernel/aarch64-linux-android-4.9/libexec/gcc/aarch64-linu
 
 $HOME/buildkernel/telegram -M "Build Start
 By      : B4gol
-Product : Rova
+Product : Rova Kernel
 Device  : #riva
 Branch  : R11
-Compiler: ""$(${CROSS_COMPILE}gcc --version | head -n 1)""
+Compiler: ""$(gcc --version | head -n 1)""
+Jalur   : ""$(${LD} --version)""
 Date    : ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
 export ARCH=arm64
 export SUBARCH=arm64
-export PATH=/usr/lib/ccache:$PATH
+export PATH=/usr/bin:$CROSS_COMPILE:$LD:/usr/lib/ccache:$PATH
 export CROSS_COMPILE
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCi-Agent
