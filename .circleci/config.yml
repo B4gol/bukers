@@ -7,7 +7,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: sudo ./setup.sh
+      - run: sudo setup.sh
 workflows:
   decent-workflow:
     jobs:
