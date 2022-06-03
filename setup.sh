@@ -27,7 +27,7 @@ echo "Get Script"
   BUILD_START=$(date +"%s")
   cd $HOME/kernel
   bash build.sh
-  make -j4 O=out
+  make -j4 ARCH=arm64 CROSS_COMPILE=gcc O=out
   cp $HOME/buildkernel/strip.sh $HOME/kernel/strip.sh
   cp $HOME/buildkernel/c.sh $HOME/kernel/c.sh
   git config --local user.name "B4gol"
