@@ -7,11 +7,10 @@ CONFIG=final_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE32+="ccache32 "
-CROSS_COMPILE+="$PWD/gcc/bin/aarch64-elf-"
-CROSS_COMPILE32+="$PWD/gcc/bin/arm-eabi-"
+CROSS_COMPILE+="~/gcc/bin/aarch64-elf-"
+CROSS_COMPILE_ARM32+="~/gcc/bin/arm-eabi-"
 export CROSSC=$CROSS_COMPILE
-export CROSSC32=$CROSS_COMPILE32
+export CROSSC32=$CROSS_COMPILE_ARM32
 LD="ld.lld"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
