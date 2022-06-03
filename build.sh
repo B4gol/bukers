@@ -40,7 +40,7 @@ export ARCH=arm64
 export SUBARCH=arm64
 export PATH=/usr/bin:$CROSSC:$PATH
 export CROSS_COMPILE
-export CROSS_COMPILE_ARM32
+export CROSSC
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCi-Agent
 make O=out $CONFIG $THREAD
