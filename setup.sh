@@ -11,7 +11,7 @@ echo "Setup Install"
  
 echo "Clone Source"
   cd $HOME && PATH=~/bin:$PATH
-  curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/
   chmod a+x ~/bin/repo
 echo "Get Script"
   cd $HOME && git clone https://github.com/B4gol/kernelscript.git buildkernel
@@ -27,7 +27,7 @@ echo "Get Script"
   BUILD_START=$(date +"%s")
   cd $HOME/kernel
   bash build.sh
-  make -j4 ARCH=arm64 CROSS_COMPILE=gcc O=out
+  make -j4 ARCH=arm64 CROSS_COMPILE=$CROSSC CROSS_COMPILE32=$CROSSC32 O=out
   cp $HOME/buildkernel/strip.sh $HOME/kernel/strip.sh
   cp $HOME/buildkernel/c.sh $HOME/kernel/c.sh
   git config --local user.name "B4gol"
