@@ -21,12 +21,11 @@ chmod a+x $HOME/gcc32/libexec/gcc/arm-eabi/13.0.0/plugin/*
 #cd $HOME/kernel && wget https://github.com/wulan17/android_kernel_xiaomi_cactus/commit/63623ef9ea9260810d10c2422d4548470a29f304.patch
 #cd $HOME/kernel && git am < 63623ef9ea9260810d10c2422d4548470a29f304.patch
 
-CROSS_COMPILE+="ccache"
+CROSS_COMPILE+="ccache "
 CROSS_COMPILE+="$HOME/gcc64/bin/aarch64-elf-"
 CROSS_COMPILE_ARM32+="$HOME/gcc32/bin/arm-eabi-"
-LD+="$HOME/gcc64/bin/aarch64-elf-ld.lld"
-export CROSSC="$HOME/gcc64/bin/aarch64-elf-"
-export CROSSC32="$HOME/gcc32/bin/arm-eabi-"
+export CROSSC+="$HOME/gcc64/bin/aarch64-elf-"
+export CROSSC32+="$HOME/gcc32/bin/arm-eabi-"
 
 $HOME/buildkernel/telegram -M "Build Start
 By      : B4gol
@@ -34,14 +33,12 @@ Product : Rova Kernel
 Device  : #riva
 Branch  : R11
 Compiler: ""$(gcc --version | head -n 1)""
-Jalur   : ""$($CROSSC-ld.lld -v | head -n1 | sed 's/(Cocok [^)]*)//' |
-		head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')""
 Date    : ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
 export ARCH=arm64
 export SUBARCH=arm64
-export PATH=/usr/bin:$CROSSC:$CROSSC32:$LD:/usr/lib/ccache:$PATH
+export PATH=/usr/bin:$CROSSC:$CROSSC32:/usr/lib/ccache:$PATH
 export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
