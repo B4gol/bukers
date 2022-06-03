@@ -45,5 +45,4 @@ export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCi-Agent
-make O=out ARCH=$ARCH $CONFIG $THREAD
-output:"1"
+make O=out $CONFIG $THREAD
