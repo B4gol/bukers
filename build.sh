@@ -1,6 +1,6 @@
 # Main Environment
 KERNEL_DIR=$PWD
-KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/zImage-dtb
+KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
 ZIP_DIR=$KERNEL_DIR/AnyKernel
 CONFIG_DIR=$KERNEL_DIR/arch/arm64/configs
 CONFIG=riva_defconfig
@@ -20,19 +20,12 @@ chmod a+x /home/travis/kernel/aarch64-linux-android-4.9/libexec/gcc/aarch64-linu
 #cd $HOME/kernel && git am < 63623ef9ea9260810d10c2422d4548470a29f304.patch
 
 $HOME/buildkernel/telegram -M "Build Start
-Dev : B4gol
-
-Product : Kernel
-
-Device : #riva
-
-Branch : Rel
-
-Compiler : ""$(gcc --version)""
-
-Compiler : ""$(${CROSS_COMPILE}gcc --version | head -n 1)""
-
-Date : ""$(env TZ=Asia/Jakarta date)"""
+By      : B4gol
+Product : Redmi 5a
+Device  : #riva
+Branch  : R11
+Compiler: ""$(${CROSS_COMPILE}gcc --version | head -n 1)""
+Date    : ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
 export ARCH=arm64
@@ -41,4 +34,4 @@ export PATH=/usr/lib/ccache:$PATH
 export CROSS_COMPILE
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCi-Agent
-make  O=out $CONFIG $THREAD
+make O=out $CONFIG $THREAD
