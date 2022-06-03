@@ -26,7 +26,7 @@ Product : Rova Kernel
 Device  : #riva
 Branch  : R11
 Compiler: ""$(gcc --version | head -n 1)""
-Jalur   : ""$(${LD} --version)""
+Jalur   : ""$(${LD} --version | head -n 1)""
 Date    : ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
