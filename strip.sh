@@ -7,8 +7,12 @@ CONFIG=riva_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$PWD/gcc/bin/aarch64-elf-gcc-"
-LD="ld"
+CROSS_COMPILE32+="ccache32 "
+CROSS_COMPILE+="$PWD/gcc/bin/aarch64-elf-"
+CROSS_COMPILE32+="$PWD/gcc/bin/arm-eabi-"
+export CROSSC=$CROSS_COMPILE
+export CROSSC32=$CROSS_COMPILE32
+LD="ld.lld"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
 mv Image.gz-dtb Image.gz-dtb
