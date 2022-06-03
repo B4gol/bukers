@@ -34,7 +34,8 @@ Product : Rova Kernel
 Device  : #riva
 Branch  : R11
 Compiler: ""$(gcc --version | head -n 1)""
-Jalur   : ""$($CROSSC-$LD --version | head -n 1)""
+Jalur   : ""$($LD -v | head -n1 | sed 's/(Cocok [^)]*)//' |
+		head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')""
 Date    : ""$(env TZ=Asia/Jakarta date)"""
 
 # Export
