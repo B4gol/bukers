@@ -37,4 +37,3 @@ export CROSS_COMPILE
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCi-Agent
 make O=out $CONFIG $THREAD
-echo "1"
