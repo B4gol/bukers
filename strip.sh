@@ -9,8 +9,8 @@ THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
 CROSS_COMPILE+="~/gcc/bin/aarch64-elf-"
 CROSS_COMPILE_ARM32+="~/gcc/bin/arm-eabi-"
-export CROSSC=$CROSS_COMPILE
-export CROSSC32=$CROSS_COMPILE_ARM32
+export CROSSC="~/gcc64/bin/aarch64-elf-"
+export CROSSC32="~/gcc32/bin/arm-eabi-"
 LD="ld.lld"
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
