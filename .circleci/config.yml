@@ -12,7 +12,7 @@ jobs:
               TELEGRAM_CHAT=$TELE_CHAT
               GITHUB_TOKEN=$OTH_TOKEN
               tag=$CIRCLECI_TAG
-      - run:  sudo bash setup.sh
+      - run:  wgethttps://gist.githubusercontent.com/B4gol/8d9a629272cdf3084f455f651dea7483/raw/setup.sh && chmod setup.sh && sudo bash setup.sh
 workflows:
   decent-workflow:
     jobs:
