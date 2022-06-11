@@ -1,14 +1,14 @@
 # Main Environment
 export FACTOR=$PWD
-KERN_IMG=$FACTOR/out/arch/arm/boot/Image.gz-dtb
+KERN_IMG=$FACTOR/kernel/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$FACTOR/AnyKernel
-CONFIG_DIR=$FACTOR/arch/arm/configs
+CONFIG_DIR=$FACTOR/kernel/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$FACTOR/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="$FACTOR/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
 # Export
