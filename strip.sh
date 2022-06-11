@@ -1,8 +1,8 @@
 # Main Environment
-FACTOR=$pwd
-ZIP_DIR=$FACTOR/kernelscript/AnyKernel
-KERN_IMG=$FACTOR/kernel/out/arch/arm/boot/Image.gz-dtb
-CONFIG_DIR=$FACTOR/kernel/arch/arm/configs
+HOME=$pwd
+ZIP_DIR=$HOME/kernelscript/AnyKernel
+KERN_IMG=$HOME/kdirect/out/arch/arm/boot/Image.gz-dtb
+CONFIG_DIR=$FACTOR/kdirect/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
