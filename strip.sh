@@ -1,5 +1,5 @@
 # Main Environment
-export FACTOR=$(pwd)/factor
+export FACTOR=$PWD/factor
 KERN_IMG=$FACTOR/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$FACTOR/AnyKernel
 CONFIG_DIR=$FACTOR/arch/arm/configs
