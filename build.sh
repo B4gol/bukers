@@ -1,6 +1,6 @@
 # Path Setup
 KDIRECT=$pwd/kdirect
-KSCRIPT=$pwd/kscript
+KSCRIPT=$pwd/keript
   export KDIRECT KSCRIPT
 KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$KSCRIPT/AnyKernel
