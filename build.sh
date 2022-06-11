@@ -1,18 +1,13 @@
-# Path Setup
 FACTORY=$pwd
-KDIRECT=$FACTORY/kdirect
-KSCRIPT=$FACTORY/keript
-  export $KDIRECT
-  export $KSCRIPT
-KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$KSCRIPT/AnyKernel
-CONFIG_DIR=$KDIRECT/arch/arm/configs
+KERN_IMG=$FACTORY/kdirect/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=$FACTORY/keript/AnyKernel
+CONFIG_DIR=$FACTORY/arch/arm/configs
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$KDIRECT/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="$KDIRECT/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="$FACTORY/kdirect/gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="$FACTORY/kdirect/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
-$KSCRIPT/telegram -M "Build
+$FACTORY/keript/telegram -M "Build
 Up: B4gol
 Product: Samsung Kernel
 Device: SM-J320G
