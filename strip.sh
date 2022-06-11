@@ -1,6 +1,7 @@
 # Main Environment
-export FACTOR=$PWD
-ZIP_DIR=$FACTOR/AnyKernel
+export FACTOR=$pwd
+ZIP_DIR=$FACTOR/kernelscript/AnyKernel
+KERN_IMG=$FACTOR/kernel/out/arch/arm/boot/Image.gz-dtb
 CONFIG_DIR=$FACTOR/kernel/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
@@ -18,7 +19,6 @@ export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCI
-export KERN_IMG=$FACTOR/kernel/out/arch/arm/boot/Image.gz-dtb
 
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
@@ -30,5 +30,5 @@ zip -r $zip_name.zip ./*
 #$HOME/buildkernel/telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 #Download : ["$zip_name".zip](https://github.com/B4gol/kernelscript/releases/download/"$CIRCLECI_TAG"/"$zip_name".zip)"
 
-curl -v -F "chat_id=$TELEGRAM_CHAT" -F document=@$HOME/kernelscript/AnyKernel/$zip_name.zip -F "parse_mode=html" -F caption="Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
+curl -v -F "chat_id=$TELEGRAM_CHAT" -F document=@$ZIP_DIR/AnyKernel/$zip_name.zip -F "parse_mode=html" -F caption="Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 Date : ""$(env TZ=Asia/Jakarta date)""" https://api.telegram.org/bot$TELEGRAM_TOKEN/sendDocument
