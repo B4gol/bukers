@@ -1,6 +1,10 @@
-KERN_IMG=$HOME/kdirect/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$HOME/keript/AnyKernel
-CONFIG_DIR=$HOME/arch/arm/configs
+KDIRECT=$pwd
+KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=$KDIRECT/AnyKernel
+CONFIG_DIR=$KDIRECT/arch/arm/configs
+CONFIG=viper_defconfig
+CORES=$(grep -c ^processor /proc/cpuinfo)
+THREAD="-j$CORES"
 echo "Chmod Path"
 # gcc64
 sudo chmod a+x $HOME/kdirect/gcc64/bin/*
@@ -30,8 +34,4 @@ export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCI
-# Main Environment
-CONFIG=viper_defconfig
-CORES=$(grep -c ^processor /proc/cpuinfo)
-THREAD="-j$CORES"
 make O=out $CONFIG $THREAD
