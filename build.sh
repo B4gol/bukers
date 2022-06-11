@@ -1,7 +1,7 @@
 # Main Environment
 FACTOR=$pwd
 ZIP_DIR=$FACTOR/kernelscript/AnyKernel
-KERN_IMG=kernel/out/arch/arm/boot/Image.gz-dtb
+KERN_IMG=$FACTOR/kernel/out/arch/arm/boot/Image.gz-dtb
 CONFIG_DIR=$FACTOR/kernel/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
