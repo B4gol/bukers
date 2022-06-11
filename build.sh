@@ -1,7 +1,8 @@
 # Path Setup
+HOME=$pwd
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$FACTOR/kernel/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="$FACTOR/kernel/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="$HOME/kdirect/gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="$HOME/kdirect/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
 # Export Path
