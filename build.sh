@@ -1,14 +1,24 @@
 # Path Setup
 KDIRECT=$pwd
+KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=$KDIRECT/AnyKernel
+CONFIG_DIR=$KDIRECT/arch/arm/configs
 CROSS_COMPILE+="ccache "
 CROSS_COMPILE+="$KDIRECT/gcc64/bin/aarch64-linux-android-"
 CROSS_COMPILE_ARM32+="$KDIRECT/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
-# Export Path
-export PATH=/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
+$KDIRECT/kernelscript/telegram -M "Build
+Up: B4gol
+Product: Samsung Kernel
+Device: SM-J320G
+Branch: SG
+Compiler: ""$(gcc --version | head -n 1)""
+Date: ""$(env TZ=Asia/Jakarta date)"""
+# Export
 export ARCH=arm
 export SUBARCH=arm
+export PATH=/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
 export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
@@ -18,4 +28,3 @@ CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 make O=out $CONFIG $THREAD
-##
