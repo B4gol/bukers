@@ -1,7 +1,7 @@
 # Main Environment
 KERNEL_DIR=$(pwd)
 KERN_IMG=$KERNEL_DIR/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$HOME/buildkernel/AnyKernel
+ZIP_DIR=$KERNEL_DIR/AnyKernel
 CONFIG_DIR=$KERNEL_DIR/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
