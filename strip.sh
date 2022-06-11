@@ -1,5 +1,4 @@
 # Main Environment
-HOME=$pwd
 ZIP_DIR=$HOME/kernelscript/AnyKernel
 KERN_IMG=$HOME/kdirect/out/arch/arm/boot/Image.gz-dtb
 CONFIG_DIR=$FACTOR/kdirect/arch/arm/configs
