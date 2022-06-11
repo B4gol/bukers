@@ -7,8 +7,8 @@ CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="$FACTOR/kernel/gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="$FACTOR/kernel/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
 export PATH=/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
