@@ -40,5 +40,5 @@ export PATH=/usr/bin:usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
 export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
-export KBUILD_BUILD_HOST=CircleCi-Agent
+export KBUILD_BUILD_HOST=CircleCI
 make O=out $CONFIG $THREAD
