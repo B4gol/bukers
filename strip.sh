@@ -1,24 +1,24 @@
 # Main Environment
-KERNEL_DIR=$PWD
-KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb
-ZIP_DIR=$HOME/buildkernel/AnyKernel
-CONFIG_DIR=$KERNEL_DIR/arch/arm64/configs
-CONFIG=riva_defconfig
+export FACTOR=$(pwd)/factor
+KERN_IMG=$FACTOR/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=$FACTOR/AnyKernel
+CONFIG_DIR=$FACTOR/arch/arm/configs
+CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$KERNEL_DIR/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="$KERNEL_DIR/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="$FACTOR/gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="$FACTOR/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
 # Export
-export ARCH=arm64
-export SUBARCH=arm64
-export PATH=/usr/bin:usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
+export ARCH=arm
+export SUBARCH=arm
+export PATH=/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
 export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
-export KBUILD_BUILD_HOST=CircleCi-Agent
+export KBUILD_BUILD_HOST=CircleCI
 
 cp $KERN_IMG $ZIP_DIR
 cd $ZIP_DIR
