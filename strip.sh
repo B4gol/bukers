@@ -1,7 +1,6 @@
-FACTORY=$pwd
-KERN_IMG=$FACTORY/kdirect/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$FACTORY/keript/AnyKernel
-CONFIG_DIR=$FACTORY/arch/arm/configs
+KERN_IMG=$HOME/kdirect/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=$HOME/keript/AnyKernel
+CONFIG_DIR=$HOME/arch/arm/configs
 echo "Chmod Path"
 # gcc64
 sudo chmod a+x $HOME/kdirect/gcc64/bin/*
@@ -12,11 +11,11 @@ sudo chmod a+x $HOME/kdirect/gcc32/bin/*
 sudo chmod a+x $HOME/kdirect/gcc32/libexec/gcc/arm-linux-androideabi/4.9.x/*
 sudo chmod a+x $HOME/kdirect/gcc32/libexec/gcc/arm-linux-androideabi/4.9.x/plugin/*
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$FACTORY/kdirect/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="$FACTORY/kdirect/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="$HOME/kdirect/gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="$HOME/kdirect/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
-$FACTORY/keript/telegram -M "Build
+$HOME/keript/telegram -M "Build
 Up: B4gol
 Product: Samsung Kernel
 Device: SM-J320G
