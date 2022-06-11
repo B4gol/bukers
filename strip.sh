@@ -1,7 +1,9 @@
 # Path Setup
-KDIRECT=$pwd/kdirect
-KERIPT=$pwd/keript
-  export KDIRECT KSCRIPT
+FACTORY=$pwd
+KDIRECT=$FACTORY/kdirect
+$KERIPT=$FACTORY/keript
+  export $KDIRECT
+  export $KSCRIPT
 KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$KERIPT/AnyKernel
 CONFIG_DIR=$KDIRECT/arch/arm/configs
