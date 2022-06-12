@@ -4,7 +4,7 @@ jobs:
   decent:
 
     docker:
-      - image: cimg/base:stable
+      - image: buildpack-deps:trusty
     steps:
       - checkout
       - run:  echo "Environment Setup"
