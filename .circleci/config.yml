@@ -1,10 +1,8 @@
 version: 2.1
-
 jobs:
   decent:
-
-    docker:
-      - image: buildpack-deps:trusty
+    machine:
+      - image: ubuntu-2004:202107-02
     steps:
       - checkout
       - run:  echo "Environment Setup"
