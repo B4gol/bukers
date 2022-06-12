@@ -1,27 +1,25 @@
 cd /home/circleci/kdirect
-DIRECT=$pwd
-SDIRECT=/home/circleci/sdirect
-KERN_IMG=$DIRECT/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$SDIRECT/AnyKernel
-CONFIG_DIR=$DIRECT/arch/arm/configs
+KERN_IMG=out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=/home/circleci/sdirect/AnyKernel
+CONFIG_DIR=arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 echo "Chmod Path"
 # gcc64
-sudo chmod a+x $DIRECT/gcc64/bin/*
-sudo chmod a+x $DIRECT/gcc64/libexec/gcc/aarch64-linux-android/4.9.x/*
-sudo chmod a+x $DIRECT/gcc64/libexec/gcc/aarch64-linux-android/4.9.x/plugin/*
+sudo chmod a+x gcc64/bin/*
+sudo chmod a+x gcc64/libexec/gcc/aarch64-linux-android/4.9.x/*
+sudo chmod a+x gcc64/libexec/gcc/aarch64-linux-android/4.9.x/plugin/*
 # gcc32
-sudo chmod a+x $DIRECT/gcc32/bin/*
-sudo chmod a+x $DIRECT/gcc32/libexec/gcc/arm-linux-androideabi/4.9.x/*
-sudo chmod a+x $DIRECT/gcc32/libexec/gcc/arm-linux-androideabi/4.9.x/plugin/*
+sudo chmod a+x gcc32/bin/*
+sudo chmod a+x gcc32/libexec/gcc/arm-linux-androideabi/4.9.x/*
+sudo chmod a+x gcc32/libexec/gcc/arm-linux-androideabi/4.9.x/plugin/*
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="$DIRECT/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="$DIRECT/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
-$SDIRECT/telegram -M "Build (load...)
+/home/circleci/sdirect/telegram -M "Build (load...)
 Up: B4gol
 Product: Samsung Kernel
 Device: SM-J320G
@@ -31,7 +29,7 @@ Date: ""$(env TZ=Asia/Jakarta date)"""
 # Export
 export ARCH=arm
 export SUBARCH=arm
-export PATH=/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
+export PATH=/home/circleci/bin:/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
 export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
