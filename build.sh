@@ -1,6 +1,7 @@
-KERN_IMG=$HOME/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$HOME/AnyKernel
-CONFIG_DIR=$HOME/kdirect/arch/arm/configs
+DIRECT=$pwd
+KERN_IMG=$DIRECT/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=$DIRECT/AnyKernel
+CONFIG_DIR=$DIRECT/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
