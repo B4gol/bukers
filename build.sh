@@ -1,5 +1,6 @@
 KDIRECT=$pwd
-KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
+OUT=$HOME/out
+KERN_IMG=$OUT/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$KDIRECT/AnyKernel
 CONFIG_DIR=$KDIRECT/arch/arm/configs
 CONFIG=viper_defconfig
@@ -35,4 +36,4 @@ export CROSS_COMPILE_ARM32
 export CROSSC CROSSC32
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCI
-sudo make O=$HOME/out $CONFIG $THREAD
+sudo make O=$OUT $CONFIG $THREAD
