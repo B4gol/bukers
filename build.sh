@@ -1,4 +1,4 @@
-DIRECT=$PWD
+DIRECT=$pwd
 KERN_IMG=$DIRECT/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$HOME/sdirect/AnyKernel
 CONFIG_DIR=$DIRECT/arch/arm/configs
