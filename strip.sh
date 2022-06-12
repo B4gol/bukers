@@ -4,7 +4,7 @@ CONFIG_DIR=$HOME/kdirect/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
-echo "Chmod Path"
+# "Chmod Path"
 # gcc64
 sudo chmod a+x $HOME/kdirect/gcc64/bin/*
 sudo chmod a+x $HOME/kdirect/gcc64/libexec/gcc/aarch64-linux-android/4.9.x/*
