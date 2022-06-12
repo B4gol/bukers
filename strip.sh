@@ -1,5 +1,6 @@
 KDIRECT=$pwd
-KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
+OUT=$HOME/out
+KERN_IMG=$OUT/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$KDIRECT/AnyKernel
 CONFIG_DIR=$KDIRECT/arch/arm/configs
 CONFIG=viper_defconfig
