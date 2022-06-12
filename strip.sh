@@ -1,22 +1,23 @@
 KDIRECT=$pwd
-KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$HOME/sdirect/AnyKernel
-CONFIG_DIR=$KDIRECT/arch/arm/configs
+KERN_IMG=~/out/arch/arm/boot/Image.gz-dtb
+ZIP_DIR=~/sdirect/AnyKernel
+CONFIG_DIR=~/kdirect/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
 THREAD="-j$CORES"
 # PATH
 CROSS_COMPILE+="ccache "
-CROSS_COMPILE+="~/kdirect/gcc64/bin/aarch64-linux-android-"
-CROSS_COMPILE_ARM32+="~/kdirect/gcc32/bin/arm-linux-androideabi-"
+CROSS_COMPILE+="~/gcc64/bin/aarch64-linux-android-"
+CROSS_COMPILE_ARM32+="~/gcc32/bin/arm-linux-androideabi-"
 CROSSC=aarch64-linux-android-
 CROSSC32=arm-linux-androideabi-
 # Export
 export ARCH=arm
 export SUBARCH=arm
-export PATH=$HOME/bin:/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
+export PATH=~/bin:/usr/lib/ccache:$CROSSC:$CROSSC32:$PATH
 export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
+export CROSSC CROSSC32
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCI
 ##
