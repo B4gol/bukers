@@ -34,5 +34,4 @@ export CROSS_COMPILE
 export CROSS_COMPILE_ARM32
 export KBUILD_BUILD_USER=B4gol
 export KBUILD_BUILD_HOST=CircleCI
-export OUT="../out"
-make O=$OUT $CONFIG $THREAD
+make O=out $CONFIG $THREAD
