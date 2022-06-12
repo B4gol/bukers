@@ -1,5 +1,5 @@
 KDIRECT=$pwd
-SDIRECT="${../$pwd}"
+SDIRECT=$../$pwd
 KERN_IMG=$KDIRECT/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=$SDIRECT/sdirect/AnyKernel
 CONFIG_DIR=$DIRECT/arch/arm/configs
