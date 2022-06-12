@@ -1,4 +1,4 @@
-export DIRECT="$(pwd)/kdirect"
+DIRECT="$(pwd)/kdirect"
 KERN_IMG=$DIRECT/out/arch/arm/boot/Image.gz-dtb
 ZIP_DIR=../sdirect/AnyKernel
 CONFIG_DIR=$DIRECT/arch/arm/configs
