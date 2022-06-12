@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   decent:
-    docker:
+    machine:
       - image: ubuntu-2004:202107-02
     steps:
       - checkout
