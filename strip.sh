@@ -1,6 +1,6 @@
 DIRECT=$pwd
 KERN_IMG=$DIRECT/out/arch/arm/boot/Image.gz-dtb
-ZIP_DIR=$DIRECT/keript/AnyKernel
+ZIP_DIR=$HOME/keript/AnyKernel
 CONFIG_DIR=$DIRECT/arch/arm/configs
 CONFIG=viper_defconfig
 CORES=$(grep -c ^processor /proc/cpuinfo)
@@ -23,7 +23,7 @@ $HOME/keript/telegram -M "Build
 Up: B4gol
 Product: Samsung Kernel
 Device: SM-J320G
-Branch: SG
+Codename: j3xlte
 Compiler: ""$(gcc --version | head -n 1)""
 Tanggal: ""$(env TZ=Asia/Jakarta date)"""
 # Export
