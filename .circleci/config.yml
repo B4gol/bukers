@@ -1,8 +1,8 @@
 version: 2.1
 jobs:
   decent:
-    machine:
-      - image: ubuntu-2004:202107-02
+    docker:
+      - image: cimg/base:stable
     steps:
       - checkout
       - run:  echo "Environment Setup"
