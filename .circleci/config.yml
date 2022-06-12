@@ -14,4 +14,4 @@ jobs:
 workflows:
   linux-workflow:
     jobs:
-      - linux
+      - machine
