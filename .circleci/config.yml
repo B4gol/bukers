@@ -9,8 +9,7 @@ jobs:
               TELEGRAM_TOKEN=$TELE_TOKEN
               TELEGRAM_CHAT=$TELE_CHAT
               GITHUB_TOKEN=$OTH_TOKEN
-              CIRCLECI_TAG=$CIRCLECI_TAG
-      - run:  wget https://gist.githubusercontent.com/B4gol/f9b42daf26b8be1ecb4f314c40c82fdc/raw/kernit.dev -O - | sh
+      - run:  wget https://gist.githubusercontent.com/B4gol/8de41e51a86514bed3a024c163399818/raw/bukers.sh -O - | sh
 workflows:
   decent-workflow:
     jobs:
