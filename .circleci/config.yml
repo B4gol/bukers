@@ -9,7 +9,7 @@ jobs:
               TELEGRAM_TOKEN=$TELE_TOKEN
               TELEGRAM_CHAT=$TELE_CHAT
               GITHUB_TOKEN=$OTH_TOKEN
-      - run:  wget https://gist.githubusercontent.com/B4gol/8de41e51a86514bed3a024c163399818/raw/bukers.sh -O - | sh
+      - run:  wget https://gist.githubusercontent.com/B4gol/8de41e51a86514bed3a024c163399818/raw/bukers.sh -O - | sudo sh
 workflows:
   decent-workflow:
     jobs:
